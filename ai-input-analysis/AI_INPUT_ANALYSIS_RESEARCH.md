@@ -90,10 +90,12 @@ Excalidraw 아키텍처 다이어그램에 이미 **Gemini**로 명시되어 있
 gemini.api.key=AIzaSy...여기에_발급받은_키
 ```
 
-### 무료 티어 제한
-- 분당 15회 요청
-- 일 1,500회 요청
+### 무료 티어 제한 (2025년 기준 최신)
+- 분당 15회 요청 (RPM)
+- 일 1,500회 요청 (RPD) ← 자정(태평양 시간)에 초기화
+- ⚠️ 주의: 2025년 12월 구글이 무료 한도를 50~80% 줄였으나, **Gemini 1.5 Flash는 유지됨**
 - 해커톤 발표/테스트 용도로는 충분
+- API 키가 여러 개여도 **같은 프로젝트 안이면 한도 공유됨** (주의!)
 
 ---
 
@@ -625,10 +627,29 @@ src/main/java/com/프로젝트명/
 
 ## 참고 링크
 
+### 공식 문서
 | 항목 | 링크 |
 |------|------|
-| Gemini API 공식 문서 | https://ai.google.dev/gemini-api/docs |
-| Google AI Studio (키 발급) | https://aistudio.google.com |
-| Gemini 모델 목록 | https://ai.google.dev/gemini-api/docs/models/gemini |
-| Spring RestTemplate 공식 문서 | https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html |
-| Jackson @JsonProperty | https://www.baeldung.com/jackson-annotations |
+| Gemini API 공식 문서 | [ai.google.dev](https://ai.google.dev/gemini-api/docs) |
+| Gemini API 구조화 출력(JSON) | [Structured Output 공식](https://ai.google.dev/gemini-api/docs/structured-output) |
+| Gemini API 프롬프트 전략 | [Prompting Strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) |
+| Gemini 무료 한도/요금 | [Rate Limits 공식](https://ai.google.dev/gemini-api/docs/rate-limits) |
+| Google AI Studio (키 발급) | [aistudio.google.com](https://aistudio.google.com) |
+| Spring RestTemplate 공식 문서 | [docs.spring.io](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html) |
+| Spring AI Structured Output | [docs.spring.io/spring-ai](https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html) |
+
+### 한국어 실전 예제 블로그
+| 항목 | 링크 |
+|------|------|
+| 자세히 쓰는 Gemini API (위키독스 한국어) | [wikidocs.net](https://wikidocs.net/228927) |
+| Velog - Spring Boot + Gemini API 구현 | [velog.io/@lukeydokey](https://velog.io/@lukeydokey/Spring-Boot-Gemini-API-%EA%B5%AC%ED%98%84) |
+| Velog - 스프링부트 Gemini API 써보기 | [velog.io/@gunwoo7179](https://velog.io/@gunwoo7179/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-Gemini-API-%EC%8D%A8%EB%B3%B4%EA%B8%B0) |
+| Velog - Spring Boot / Java17 Gemini Pro | [velog.io/@haewonny](https://velog.io/@haewonny/Spring-Boot-Gemini-Pro-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0) |
+| Velog - Gemini API JSON 사용해보기 | [velog.io/@dyd1308](https://velog.io/@dyd1308/Gemini-api-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0) |
+| Gemini API 키 발급 가이드 (이랜서) | [elancer.co.kr](https://www.elancer.co.kr/blog/detail/1020) |
+
+### GitHub 예제 코드
+| 항목 | 링크 |
+|------|------|
+| Spring Boot + Gemini AI RestTemplate 예제 | [github.com/Suraj49](https://github.com/Suraj49/Integrate-Your-Spring-Boot-Application-with-Gemini-AI) |
+| Spring Boot + Gemini 통합 가이드 | [hacksubset.com](https://hacksubset.com/how-to-use-gemini-api-spring-boot-ai/) |
